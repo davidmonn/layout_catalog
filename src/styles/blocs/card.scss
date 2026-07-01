@@ -2,7 +2,7 @@
   display: grid;
   width: 1200px;
   margin: auto;
-  gap: 48px;
+  gap: 44px 48px;
 
   margin-top: 51px;
 
@@ -17,12 +17,13 @@
   display: flex;
   flex-direction: column;
 
-  width: 198px;
+  width: 200px;
   height: 406px;
 
   background-color: #fff;
   border: 1px solid $gray-elements;
   border-radius: 5px;
+
 
   align-items: center;
 }
