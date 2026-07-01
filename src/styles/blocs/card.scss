@@ -1,16 +1,48 @@
 .catalog {
   display: grid;
-  width: 1200px;
+  width: 944px;
+  height: 862px;
   margin: auto;
-  gap: 44px 48px;
+  gap: 46px 48px;
 
-  margin-top: 51px;
+  padding-top: 50px;
 
   grid-template-columns: repeat(4, 200px);
-  grid-template-rows: repeat(2, 408px);
+  grid-template-rows: repeat(1, 408px);
 
   align-items: center;
-  justify-content: center;
+  justify-content: space-evenly;
+}
+
+@media (min-width: 300px) {
+  .catalog {
+    width: 300px;
+    grid-template-columns: repeat(1, 200px);
+    grid-template-rows: repeat(1, 408px);
+  }
+}
+
+@media (min-width: 600px) {
+  .catalog {
+    grid-template-columns: repeat(2, 200px);
+    grid-template-rows: repeat(2, 408px);
+  }
+}
+
+@media (min-width: 1024px) {
+  .catalog {
+    width: 944px;
+    grid-template-columns: repeat(3, 200px);
+    grid-template-rows: repeat(2, 408px);
+  }
+}
+
+@media (min-width: 1200px) {
+  .catalog {
+    width: 944px;
+    grid-template-columns: repeat(4, 200px);
+    grid-template-rows: repeat(2, 408px);
+  }
 }
 
 .card {
@@ -23,7 +55,6 @@
   background-color: #fff;
   border: 1px solid $gray-elements;
   border-radius: 5px;
-
 
   align-items: center;
 }
