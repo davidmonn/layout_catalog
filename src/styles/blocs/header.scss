@@ -1,138 +1,76 @@
 .header {
   display: flex;
-  flex-direction: row;
-  box-shadow: 0 2px 4px #0000000d;
-
-  margin: auto;
-
-  width: 100%;
-  height: 60px;
-
   align-items: center;
-
-  &__logo {
-    display: flex;
-
-    width: 40px;
-    height: 40px;
-
-    margin-left: 50px;
-  }
-
-  &__nav {
-    display: flex;
-    margin-right: 50px;
-
-    width: 100%;
-    height: 60px;
-    gap: 20px;
-
-    justify-content: flex-end;
-    text-transform: uppercase;
-  }
+  justify-content: space-between;
 }
 
-.header__link {
-  position: relative;
-  box-sizing: border-box;
+.logo {
   display: flex;
-  color: $nav-color;
-  text-decoration: none;
-  line-height: 60px;
-  transition: 300ms;
-  font-size: 12px;
-}
+  margin-left: 50px;
 
-.header__link:hover {
-  color: $blue-accent;
-}
-
-.header__link::before {
-  content: '';
-  position: absolute;
-  left: 0;
-  bottom: -2px;
-  width: 0;
-  height: 4px;
-  background: $blue-accent;
-  border-radius: 8px;
-  transition: width 0.3s;
-}
-
-.header__link:hover::before {
-  width: 100%;
-}
-
-@media (min-width: 300px) {
-  .header {
-    width: 300px;
-    gap: 10px;
-  }
-
-  .header__logo {
-    display: none;
-  }
-
-  .header__nav {
-    gap: 5px;
-    margin: 0;
-    padding: 0;
-  }
-
-  .header__link {
-    margin: 0;
-    padding: 0;
-    gap: 0;
-    font-size: 0.3em;
-  }
-}
-
-@media (min-width: 600px) {
-  .header {
-    width: 600px;
-    gap: 10px;
-  }
-
-  .header__logo {
-    display: block;
-    margin: 5px;
-    padding: 0;
-  }
-
-  .header__link {
-    margin: 0;
-    gap: 5px;
-  }
-}
-
-@media (min-width: 1024px) {
-  .header {
-    width: 1024px;
-    gap: 243px;
-  }
-
-  .header__logo {
+  &__image {
     display: block;
   }
+}
 
-  .header__nav {
-    gap: 5px;
+.nav {
+  margin-right: 50px;
+
+  &__list {
+    display: flex;
+    align-items: center;
+
     margin: 0;
     padding: 0;
+
+    list-style: none;
   }
 
-  .header__link {
+  &__item {
+    margin-right: 20px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  &__link {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    height: 60px;
+
     font-size: 12px;
-  }
-}
+    line-height: 14px;
+    color: $nav-color;
+    text-decoration: none;
+    text-transform: uppercase;
 
-@media (max-width: 1200px) {
-  .header {
-    width: 1200px;
-    gap: 419px;
-  }
+    transition: color 300ms ease;
 
-  .header__logo {
-    display: block;
+    &:hover {
+      color: $nav-hover;
+    }
+
+    &.is-active {
+      color: $nav-hover;
+
+      &::after {
+        content: '';
+
+        position: absolute;
+        bottom: 0;
+        left: 0;
+
+        width: 100%;
+        height: 4px;
+        border-radius: 8px;
+
+        background-color: $nav-hover;
+      }
+    }
   }
 }
