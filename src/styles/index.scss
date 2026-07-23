@@ -1,18 +1,13 @@
 @import './utils/var';
-@import './blocs/card';
+@import './utils/mixins';
 @import './blocs/header';
-@import './blocs/stars';
 @import './blocs/catalog';
-
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
+@import './blocs/card';
+@import './blocs/stars';
 
 body {
   margin: 0;
-  font-family: Roboto, Arial, Helvetica, sans-serif;
-  font-weight: 500;
-  font-style: 12px;
+  padding: 0;
+  font-family: $font-main;
+  background-color: white;
 }
